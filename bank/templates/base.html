@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bank Management</title>
+
+    <link href="{% static '/dist/css/style.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+
+    {% block sidebar %} {% endblock sidebar %} {% block content %} {% endblock content %}
+
+    <script src="{% static '/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+
+    <script src="{% static '/assets/libs/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static '/assets/libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/dist/js/app-style-switcher.js' %}"></script>
+
+    <script src="{% static '/dist/js/waves.js' %}"></script>
+
+    <script src="{% static '/dist/js/sidebarmenu.js' %}"></script>
+    <script src="{% static '/dist/js/custom.js' %}"></script>
+    <script src="{% static '/assets/libs/chartist/dist/chartist.min.js' %}"></script>
+    <script src="{% static '/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js' %}"></script>
+    <script src="{% static '/dist/js/pages/dashboards/dashboard1.js' %}"></script>
+</body>
+
+</html>

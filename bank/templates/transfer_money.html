@@ -1,0 +1,114 @@
+{% extends 'sidebar.html' %} {% load static %} {% block content %}
+<div class="page-wrapper">
+
+    <div class="page-breadcrumb">
+        <div class="row align-items-center">
+            <div class="col-5">
+                <h4 class="page-title">Transfer Money to Another Account</h4>
+                <div class="d-flex align-items-center">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        {% if from_customer and to_customer %}
+        <div class="form-group">
+            <div class="col-md-12">Sender Balance</div>
+            <div class="col-md-12">
+                {{from_customer.balance}}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">Receiver Balance</div>
+            <div class="col-md-12">
+                {{to_customer.balance}}
+            </div>
+        </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+
+
+                    <div class="d-flex align-items-center">
+                        <h4 class="page-title">From Account</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12">Full Name</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control form-control-line" name="from_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12">From Account no</label>
+                <div class="col-md-12">
+                    <input type="number" class="form-control form-control-line" name="from_acc_no">
+                </div>
+            </div>
+
+
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+
+                    <h4 class="page-title">To Account</h4>
+                    <div class="d-flex align-items-center">
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="col-md-12">Full Name</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control form-control-line" name="to_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12">To account no</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control form-control-line" name="to_acc_no">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12">Select Bank</label>
+                <div class="col-md-12">
+                    <select>
+                        <option>Sonali Bank</option>
+                        <option>Trust Bank</option>
+                        <option>BRAC Bank</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-12">Amount send</label>
+                <div class="col-md-12">
+                    <input type="number" class="form-control form-control-line" name="transfer_amount">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-success">Transfer</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>{% endblock content %}

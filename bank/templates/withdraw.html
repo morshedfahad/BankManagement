@@ -1,0 +1,60 @@
+ {% extends 'sidebar.html' %} {% load static %} {% block content %}
+<div class="page-wrapper">
+
+    <div class="page-breadcrumb">
+        <div class="row align-items-center">
+            <div class="col-5">
+                <h4 class="page-title">Withdraw Money </h4>
+                <div class="d-flex align-items-center">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="col-md-12">Full Name</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control form-control-line" name="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12">Account No</label>
+                <div class="col-md-12">
+                    <input type="number" class="form-control form-control-line" name="acc_no">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-12">Withdraw Amount</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control form-control-line" name="withdraw_amount">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <button class="btn btn-success">Withdraw</button>
+                </div>
+            </div>
+
+        </form>
+
+        {% if customer %}
+        <div class="form-group">
+            <div class="col-md-12">Available Amount</div>
+            <div class="col-md-12">
+                {{customer.balance}}
+            </div>
+        </div> {% endif %}
+
+
+
+    </div>
+
+</div>
+{% endblock content %}

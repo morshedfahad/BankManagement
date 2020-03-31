@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+
+<style type="text/css">
+            
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+    }
+    h3 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+        font-size: 1.5em;
+        border: border-top pt-3;
+    }
+    
+</style>
+</head>
+<h2>You have been logged out</h2>
+<div >
+    <h3>    
+    <small class="text-muted">
+            <a href="{% url 'login' %}" >Log In Again</a>
+        </small>
+    </h3>
+</div>
+{% endblock content %}
